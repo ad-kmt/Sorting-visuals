@@ -8,11 +8,11 @@ public:
     int *arr = new int[n];
     int range;              //range
 
-    void random_array(int n,int range);
+    void random_array(int n,int range); //generates random elements to array.
 
-    void reset_array();
+    void reset_array(); //resets the sorted array with random elements.
 
-    void print_array();
+    void print_array(); //last display of array after sorting.
 
 };
 
@@ -29,7 +29,7 @@ public:
         int gd = DETECT, gm;
 
         initgraph(&gd, &gm, "C:\\TC\\BGI");
-        initwindow(10*this->n,this->range,"Visualization");
+        initwindow(10*this->n,this->range+50,"Visualization");
     }
 
     void arrayfunc::reset_array()
@@ -50,7 +50,9 @@ public:
         for(int i=0;i<100;i++)
         {
             setbar(i,arr[i],WHITE);
+            delay(10);
         }
+
     }
 
 

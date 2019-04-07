@@ -9,7 +9,7 @@ void delport(int x)
     clearviewport();
 }
 
-void setbar(int x,int value,int color)
+void setbar(int x,int value,int color) //forms a bar of a given height and at a defined position.
 {
     delport(x);
     setviewport(10*x,0,10+10*x,500,1);

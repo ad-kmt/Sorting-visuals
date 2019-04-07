@@ -3,6 +3,9 @@
 
 void selectionSort(int arr[], int n)
 {
+    setviewport(0,0,1000,520,0);
+    outtextxy(10,510,"SELECTION SORT");
+    outtextxy(260,510,"Delay: 0 ms");
     int i, j, min_idx;
 
     // One by one move boundary of unsorted subarray
@@ -51,5 +54,6 @@ void selectionSort(int arr[], int n)
 
         delport(i-1);
         setbar(i-1,arr[i-1],WHITE);
+        clearviewport();
 }
 #endif // SELECTION_H_INCLUDED

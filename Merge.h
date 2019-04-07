@@ -6,6 +6,7 @@
 // Second subarray is arr[m+1..r]
 void merge(int arr[], int l, int m, int r)
 {
+
     int i, j, k;
     int n1 = m - l + 1;
     int n2 =  r - m;
@@ -34,18 +35,18 @@ void merge(int arr[], int l, int m, int r)
 
             arr[k] = L[i];
             setbar(k,L[i],RED);
-            delay(0);
+            delay(5);
             setbar(k,L[i],RED);
-            delay(0);
+            delay(5);
             i++;
         }
         else
         {
             arr[k] = R[j];
             setbar(k,R[j],RED);
-            delay(0);
+            delay(5);
             setbar(k,R[j],RED);
-            delay(0);
+            delay(5);
             j++;
         }
         k++;
@@ -57,9 +58,9 @@ void merge(int arr[], int l, int m, int r)
     {
         arr[k] = L[i];
         setbar(k,L[i],RED);
-        delay(0);
+        delay(5);
         setbar(k,L[i],RED);
-        delay(0);
+        delay(5);
         i++;
         k++;
     }
@@ -70,9 +71,9 @@ void merge(int arr[], int l, int m, int r)
     {
         arr[k] = R[j];
         setbar(k,R[j],RED);
-        delay(0);
+        delay(5);
         setbar(k,R[j],RED);
-        delay(0);
+        delay(5);
         j++;
         k++;
     }
@@ -82,6 +83,10 @@ void merge(int arr[], int l, int m, int r)
    sub-array of arr to be sorted */
 void mergeSort(int arr[], int l, int r)
 {
+    setviewport(0,0,1000,520,0);
+    outtextxy(10,510,"MERGE SORT       ");
+    outtextxy(260,510,"Delay: 5 ms");
+
     if (l < r)
     {
         // Same as (l+r)/2, but avoids overflow for

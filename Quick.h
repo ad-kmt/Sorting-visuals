@@ -10,7 +10,7 @@ int partition (int arr[], int low, int high)
 {
     int pivot = arr[high]; // pivot
     setbar(high,pivot,RED);
-    delay(0);
+    delay(5);
     int i = (low - 1);  // Index of smaller element
 
     for (int j = low; j <= high- 1; j++)
@@ -22,34 +22,34 @@ int partition (int arr[], int low, int high)
             i++;    // increment index of smaller element
             setbar(i,arr[i],RED);
             setbar(j,arr[j],RED);
-            delay(0);
+            delay(5);
 
             swap(&arr[i], &arr[j]);
 
             setbar(i,arr[i],WHITE);
             setbar(j,arr[j],WHITE);
-            delay(0);
+            delay(5);
 
         }
         else
         {
             setbar(j,arr[j],RED);
-            delay(0);
+            delay(5);
             setbar(j,arr[j],WHITE);
-            delay(0);
+            delay(5);
         }
 
     }
 
     setbar(i+1,arr[i+1],RED);
     setbar(high,arr[high],RED);
-    delay(0);
+    delay(5);
 
     swap(&arr[i + 1], &arr[high]);
 
     setbar(i+1,arr[i+1],WHITE);
     setbar(high,arr[high],WHITE);
-    delay(0);
+    delay(5);
 
     return (i + 1);
 }
@@ -60,6 +60,10 @@ int partition (int arr[], int low, int high)
   high  --> Ending index */
 void quickSort(int arr[], int low, int high)
 {
+    setviewport(0,0,1000,520,0);
+    outtextxy(10,510,"QUICK SORT        ");
+    outtextxy(260,510,"Delay: 5 ms");
+
     if (low < high)
     {
         /* pi is partitioning index, arr[p] is now
@@ -70,6 +74,7 @@ void quickSort(int arr[], int low, int high)
         // partition and after partition
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
+
     }
 }
 
