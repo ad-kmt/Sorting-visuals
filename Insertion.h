@@ -4,9 +4,17 @@
 
 void insertionSort(int arr[], int n)
 {
+    int Delay = 10; //change this delay value for slower/faster visualization.
+
+    ostringstream str2;
+    str2<<Delay;
+    string str1 = "Delay: ";
+    string str3 = " ms";
+    string str = str1 + str2.str() + str3;
+
     setviewport(0,0,1000,520,0);
     outtextxy(10,510,"INSERTION SORT");
-    outtextxy(260,510,"Delay: 0 ms");
+    outtextxy(260,510,&str[0]);
 
     int i, key, j;
     for (i = 1; i < n; i++) {
@@ -14,7 +22,7 @@ void insertionSort(int arr[], int n)
         key = arr[i];
 
         setbar(i,arr[i],GREEN);
-        delay(0);
+        delay(Delay);
 
         j = i - 1;
 
@@ -29,33 +37,33 @@ void insertionSort(int arr[], int n)
             if(j+1==i)
             {
                 setbar(j+1,arr[j+1],GREEN);
-                delay(0);
+                delay(Delay);
             }
             else
             {
                 setbar(j+1,arr[j+1],WHITE);
-                delay(0);
+                delay(Delay);
             }
 
             j = j - 1;
 
             setbar(j+1,arr[j+1],RED);
-            delay(0);
+            delay(Delay);
 
             setbar(j,arr[j],RED);
-            delay(0);
+            delay(Delay);
         }
 
         arr[j + 1] = key;
 
         setbar(j+1,arr[j+1],WHITE);
-        delay(0);
+        delay(Delay);
 
         setbar(j,arr[j],WHITE);
-        delay(0);
+        delay(Delay);
         }
         setbar(i,arr[i],WHITE);
-        delay(0);
+        delay(Delay);
 }
 
 #endif // INSERTION_H_INCLUDED

@@ -8,9 +8,11 @@
    of pivot */
 int partition (int arr[], int low, int high)
 {
+    int Delay = 10; //change this delay value and the delay value at line 65 for slower/faster visualization.
+
     int pivot = arr[high]; // pivot
     setbar(high,pivot,RED);
-    delay(5);
+    delay(Delay);
     int i = (low - 1);  // Index of smaller element
 
     for (int j = low; j <= high- 1; j++)
@@ -22,34 +24,34 @@ int partition (int arr[], int low, int high)
             i++;    // increment index of smaller element
             setbar(i,arr[i],RED);
             setbar(j,arr[j],RED);
-            delay(5);
+            delay(Delay);
 
             swap(&arr[i], &arr[j]);
 
             setbar(i,arr[i],WHITE);
             setbar(j,arr[j],WHITE);
-            delay(5);
+            delay(Delay);
 
         }
         else
         {
             setbar(j,arr[j],RED);
-            delay(5);
+            delay(Delay);
             setbar(j,arr[j],WHITE);
-            delay(5);
+            delay(Delay);
         }
 
     }
 
     setbar(i+1,arr[i+1],RED);
     setbar(high,arr[high],RED);
-    delay(5);
+    delay(Delay);
 
     swap(&arr[i + 1], &arr[high]);
 
     setbar(i+1,arr[i+1],WHITE);
     setbar(high,arr[high],WHITE);
-    delay(5);
+    delay(Delay);
 
     return (i + 1);
 }
@@ -60,9 +62,17 @@ int partition (int arr[], int low, int high)
   high  --> Ending index */
 void quickSort(int arr[], int low, int high)
 {
+    int Delay = 10;
+
+    ostringstream str2;
+    str2<<Delay;
+    string str1 = "Delay: ";
+    string str3 = " ms";
+    string str = str1 + str2.str() + str3;
+
     setviewport(0,0,1000,520,0);
     outtextxy(10,510,"QUICK SORT        ");
-    outtextxy(260,510,"Delay: 5 ms");
+    outtextxy(260,510,&str[0]);
 
     if (low < high)
     {

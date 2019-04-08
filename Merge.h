@@ -6,6 +6,7 @@
 // Second subarray is arr[m+1..r]
 void merge(int arr[], int l, int m, int r)
 {
+    int Delay = 10; //change this delay value and the delay value at line 87 for slower/faster visualization.
 
     int i, j, k;
     int n1 = m - l + 1;
@@ -35,18 +36,18 @@ void merge(int arr[], int l, int m, int r)
 
             arr[k] = L[i];
             setbar(k,L[i],RED);
-            delay(5);
+            delay(Delay);
             setbar(k,L[i],RED);
-            delay(5);
+            delay(Delay);
             i++;
         }
         else
         {
             arr[k] = R[j];
             setbar(k,R[j],RED);
-            delay(5);
+            delay(Delay);
             setbar(k,R[j],RED);
-            delay(5);
+            delay(Delay);
             j++;
         }
         k++;
@@ -58,9 +59,9 @@ void merge(int arr[], int l, int m, int r)
     {
         arr[k] = L[i];
         setbar(k,L[i],RED);
-        delay(5);
+        delay(Delay);
         setbar(k,L[i],RED);
-        delay(5);
+        delay(Delay);
         i++;
         k++;
     }
@@ -71,9 +72,9 @@ void merge(int arr[], int l, int m, int r)
     {
         arr[k] = R[j];
         setbar(k,R[j],RED);
-        delay(5);
+        delay(Delay);
         setbar(k,R[j],RED);
-        delay(5);
+        delay(Delay);
         j++;
         k++;
     }
@@ -83,9 +84,17 @@ void merge(int arr[], int l, int m, int r)
    sub-array of arr to be sorted */
 void mergeSort(int arr[], int l, int r)
 {
+    int Delay = 10;
+
+    ostringstream str2;
+    str2<<Delay;
+    string str1 = "Delay: ";
+    string str3 = " ms";
+    string str = str1 + str2.str() + str3;
+
     setviewport(0,0,1000,520,0);
     outtextxy(10,510,"MERGE SORT       ");
-    outtextxy(260,510,"Delay: 5 ms");
+    outtextxy(260,510,&str[0]);
 
     if (l < r)
     {

@@ -1,5 +1,7 @@
 #include<iostream>
-#include<stdio.h>
+using namespace std;
+#include"bits/stdc++.h"
+#include<sstream>
 #include<graphics.h>
 #include"function.h"
 #include"class_array.h"
@@ -7,11 +9,12 @@
 #include"Insertion.h"
 #include"Merge.h"
 #include"Quick.h"
-using namespace std;
+
 
 // driver code
 int main()
 {
+
 
     arrayfunc A; // Object Declaration
     A.random_array(100,500); //Initializing with size and range of numbers
@@ -39,6 +42,7 @@ int main()
 
     delay(1000);
     quickSort(A.arr,0,A.n);
+    A.print_array();
 
    getch();
    closegraph();
